@@ -10,7 +10,7 @@ public class gestionMegaMan : MonoBehaviour
     public float forceSaut;
     public float vitesseMaximale;
     public bool finDePartie = false;
-    public bool peutAttaquer;
+    private bool attaque = false;
 
     public AudioClip SonsMort;
 
@@ -60,10 +60,11 @@ public class gestionMegaMan : MonoBehaviour
         // Attaque
         if (Input.GetKeyDown(KeyCode.Space) && Physics2D.OverlapCircle(transform.position, 0.25f))
         {         
-            peutAttaquer = false;
-            Invoke("reinitialisationAttaque", 0.5f);
+            attaque = true;
             vitesseDeplacement = vitesseMaximale;
+            Invoke("reinitialisationAttaque", 0.5f);
         }
+        
 
             //On applique les forces sur le rigidbody
         GetComponent<Rigidbody2D>().velocity = velocitePerso;
@@ -73,44 +74,41 @@ public class gestionMegaMan : MonoBehaviour
     void GestionAnimationPersonnage()
     {       
         // Animation déplacements horizontals
-           if(Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x) > 0.1f)
-           {
-            GetComponent<Animator>().SetBool("marche",true);
-           }
-           else
-           {
-            GetComponent<Animator>().SetBool("marche",false);
-           }
+        if(Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x) > 0.1f)
+        {
+        GetComponent<Animator>().SetBool("marche",true);
+        }
+        else
+        {
+        GetComponent<Animator>().SetBool("marche",false);
+        }
 
         // Animation saut
-            if(Physics2D.OverlapCircle(transform.position, 0.25f))
-           {
-            GetComponent<Animator>().SetBool("saute",false);
-           }
-           else
-           {
-            GetComponent<Animator>().SetBool("saute",true);
-           }
+        if(Physics2D.OverlapCircle(transform.position, 0.25f))
+        {
+        GetComponent<Animator>().SetBool("saute",false);
+        }
+        else
+        {
+        GetComponent<Animator>().SetBool("saute",true);
+        }
 
         // Animation attaque
-        //    if(!peutAttaquer)
-        //    {
-        //     GetComponent<Animator>().SetBool("attaque", true);
-        //    }
-        //    else
-        //    {
-        //     GetComponent<Animator>().SetBool("attaque", false);
-        //    }
-         
-
-
+        if(attaque)
+        {
+        GetComponent<Animator>().SetBool("attaque", true);
+        }
+        else
+        {
+        GetComponent<Animator>().SetBool("attaque", false);
+        }
     }
 
-    void OnCollisionEnter2D(Collision2D megaman)
+    void OnCollisionEnter2D(Collision2D infosCollisions)
     {
-        if(megaman.gameObject.name == "roueDentelee" || megaman.gameObject.name == "Abeille")
+        if(infosCollisions.gameObject.name == "roueDentelee" || infosCollisions.gameObject.name == "Abeille")
         {
-            if(peutAttaquer)
+            if(!attaque)
             {
                 finDePartie = true;
                 GetComponent<AudioSource>().PlayOneShot(SonsMort);
@@ -119,15 +117,22 @@ public class gestionMegaMan : MonoBehaviour
             }
             else
             {
-                
+                if(infosCollisions.gameObject.name == "Abeille")
+                {
+                    infosCollisions.gameObject.GetComponent<gestionAbeille>().DestructionAbeille();
+                }
+                else if(infosCollisions.gameObject.name == "roueDentelee")
+                {
+                    infosCollisions.gameObject.GetComponent<gestionRoue>().DestructionRoue();
+                }
             }
         }     
     }
 
     void reinitialisationAttaque()
     {
-        peutAttaquer = true;
-        Debug.Log("triggered");
+        attaque = false;
+        vitesseDeplacement = 8f;
     }
 
     void recommencerJeu()

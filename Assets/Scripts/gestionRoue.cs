@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class gestionRoue : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D infoCollision)
+
+    public void DestructionRoue()
     {
-        if(infoCollision.gameObject.name == "Megaman")
-        {
-            GetComponent<Animator>().enabled = true;
-            GetComponent<Collider2D>().enabled = false;
-            GetComponent<Rigidbody2D>().angularVelocity = 0;
-            GetComponent<Rigidbody2D>().gravityScale = 0;
-            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            Destroy(gameObject,0.2f);
-        }
+        GetComponent<Animator>().enabled = true;
+        GetComponent<Collider2D>().enabled = false;
+        GetComponent<Rigidbody2D>().angularVelocity = 0;
+        GetComponent<Rigidbody2D>().gravityScale = 0;
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        Destroy(gameObject, 0.2f);
+
     }
 }

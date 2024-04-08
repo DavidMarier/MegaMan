@@ -5823,7 +5823,8 @@ GameObject:
   - component: {fileID: 378261840}
   - component: {fileID: 378261843}
   - component: {fileID: 378261842}
-  - component: {fileID: 378261841}
+  - component: {fileID: 378261844}
+  - component: {fileID: 378261845}
   m_Layer: 0
   m_Name: Abeille
   m_TagString: Untagged
@@ -5846,43 +5847,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1700535723}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &378261841
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 378261839}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -0.11997604, y: -0.1679667}
-  m_Size: {x: 0.63877106, y: 0.86406666}
-  m_Direction: 0
 --- !u!95 &378261842
 Animator:
   serializedVersion: 7
@@ -5959,6 +5923,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!70 &378261844
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378261839}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.13440514, y: -0.17547616}
+  m_Size: {x: 0.83810806, y: 0.95358664}
+  m_Direction: 0
+--- !u!114 &378261845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378261839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dd9095c8ea02d48b0e574dce071418, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &382991075
 GameObject:
   m_ObjectHideFlags: 0
@@ -9907,7 +9920,6 @@ MonoBehaviour:
   forceSaut: 30
   vitesseMaximale: 25
   finDePartie: 0
-  peutAttaquer: 0
   SonsMort: {fileID: 8300000, guid: bd56f20d539f58347a2d080d46364f89, type: 3}
 --- !u!82 &774972490
 AudioSource:
@@ -17123,6 +17135,7 @@ GameObject:
   - component: {fileID: 1384431669}
   - component: {fileID: 1384431668}
   - component: {fileID: 1384431670}
+  - component: {fileID: 1384431671}
   m_Layer: 0
   m_Name: Abeille
   m_TagString: Untagged
@@ -17255,9 +17268,21 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.11997604, y: -0.1679667}
-  m_Size: {x: 0.63877106, y: 0.86406666}
+  m_Offset: {x: -0.11947322, y: -0.16427577}
+  m_Size: {x: 0.92772007, y: 0.990922}
   m_Direction: 0
+--- !u!114 &1384431671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384431666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dd9095c8ea02d48b0e574dce071418, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1386859162
 GameObject:
   m_ObjectHideFlags: 0
@@ -19294,7 +19319,8 @@ GameObject:
   - component: {fileID: 1508066260}
   - component: {fileID: 1508066263}
   - component: {fileID: 1508066262}
-  - component: {fileID: 1508066261}
+  - component: {fileID: 1508066264}
+  - component: {fileID: 1508066265}
   m_Layer: 0
   m_Name: Abeille
   m_TagString: Untagged
@@ -19317,43 +19343,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1528317471}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &1508066261
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1508066259}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -0.11997604, y: -0.1679667}
-  m_Size: {x: 0.63877106, y: 0.86406666}
-  m_Direction: 0
 --- !u!95 &1508066262
 Animator:
   serializedVersion: 7
@@ -19430,6 +19419,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!70 &1508066264
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508066259}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.11200619, y: -0.1530751}
+  m_Size: {x: 0.8082466, y: 0.998389}
+  m_Direction: 0
+--- !u!114 &1508066265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508066259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dd9095c8ea02d48b0e574dce071418, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1511916757
 GameObject:
   m_ObjectHideFlags: 0
@@ -28301,8 +28339,8 @@ GameObject:
   - component: {fileID: 2123377596}
   - component: {fileID: 2123377598}
   - component: {fileID: 2123377599}
-  - component: {fileID: 2123377600}
   - component: {fileID: 2123377601}
+  - component: {fileID: 2123377602}
   m_Layer: 0
   m_Name: roueDentelee
   m_TagString: Untagged
@@ -28437,18 +28475,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2123377600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123377595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdcda2cd86051e343b172dc437aae15e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &2123377601
 Rigidbody2D:
   serializedVersion: 4
@@ -28476,6 +28502,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2123377602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123377595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdcda2cd86051e343b172dc437aae15e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2143960314
 GameObject:
   m_ObjectHideFlags: 0
