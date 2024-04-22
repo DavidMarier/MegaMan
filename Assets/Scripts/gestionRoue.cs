@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class gestionRoue : MonoBehaviour
 {
+    public AudioClip sonExplosion;
 
     public void DestructionRoue()
     {
+        GetComponent<AudioSource>().PlayOneShot(sonExplosion);
         GetComponent<Animator>().enabled = true;
         GetComponent<Collider2D>().enabled = false;
         GetComponent<Rigidbody2D>().angularVelocity = 0;

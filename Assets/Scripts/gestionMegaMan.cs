@@ -13,9 +13,13 @@ public class gestionMegaMan : MonoBehaviour
     public static int pointage = 0;
     public bool finDePartie = false;
     private bool attaque = false;
+    private bool tire = false;
+
+    public GameObject balleOriginale;
 
     public AudioClip SonsMort;
     public AudioClip SonItem;
+    public AudioClip SonArme;
 
     private Vector2 velocitePerso;
     
@@ -30,8 +34,34 @@ public class gestionMegaMan : MonoBehaviour
             GestionDeplacementPersonnage();
 
             GestionAnimationPersonnage();
+
+            GestionTirePersonnage();
         }
     }
+
+// Gestion des balles
+    void GestionTirePersonnage(){
+        if(Input.GetKeyDown(KeyCode.Return) && !attaque && !Input.GetKeyDown(KeyCode.W) && Physics2D.OverlapCircle(transform.position, 0.25f))
+        {
+            tire = true;
+            GameObject balleClone = Instantiate(balleOriginale);
+            balleClone.SetActive(true);
+            GetComponent<AudioSource>().PlayOneShot(SonArme);
+            if(!GetComponent<SpriteRenderer>().flipX){
+                balleClone.transform.position= transform.position+ new Vector3(.6f, 1);    
+                balleClone.GetComponent<Rigidbody2D>().velocity= new Vector2(25, 0);
+            }
+            else if(GetComponent<SpriteRenderer>().flipX){
+                balleClone.transform.position= transform.position+ new Vector3(-.6f, 1);    
+                balleClone.GetComponent<Rigidbody2D>().velocity= new Vector2(-25, 0);
+            }
+        }
+        else if(!Input.GetKeyDown(KeyCode.Return))
+        {
+            tire = false;
+        }
+    }
+        
 
 // Gestion des déplacements
     void GestionDeplacementPersonnage(){
@@ -106,11 +136,21 @@ public class gestionMegaMan : MonoBehaviour
         {
         GetComponent<Animator>().SetBool("attaque", false);
         }
+
+        //Animation tire
+        if(tire)
+        {
+        GetComponent<Animator>().SetBool("tire", true);
+        }
+        else if(Input.GetKeyUp(KeyCode.Return))
+        {
+        GetComponent<Animator>().SetBool("tire", false);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D infosCollisions)
     {
-        if(infosCollisions.gameObject.name == "roueDentelee" || infosCollisions.gameObject.name == "Abeille")
+        if(infosCollisions.gameObject.tag == "ennemie" || infosCollisions.gameObject.name == "Abeille")
         {
             if(!attaque)
             {
@@ -118,6 +158,10 @@ public class gestionMegaMan : MonoBehaviour
                 GetComponent<AudioSource>().PlayOneShot(SonsMort);
                 GetComponent<Animator>().SetTrigger("mort");
                 Invoke("recommencerJeu", 2f);
+                if(infosCollisions.gameObject.tag == "ennemie")
+                {
+                    infosCollisions.gameObject.GetComponent<gestionRoue>().DestructionRoue();
+                }
             }
             else
             {
@@ -125,7 +169,7 @@ public class gestionMegaMan : MonoBehaviour
                 {
                     infosCollisions.gameObject.GetComponent<gestionAbeille>().DestructionAbeille();
                 }
-                else if(infosCollisions.gameObject.name == "roueDentelee")
+                else if(infosCollisions.gameObject.tag == "ennemie")
                 {
                     infosCollisions.gameObject.GetComponent<gestionRoue>().DestructionRoue();
                 }

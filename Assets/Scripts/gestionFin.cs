@@ -34,5 +34,6 @@ public class gestionFin : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
         SceneManager.LoadScene("Megaman");
+        gestionMegaMan.pointage = 0;
     }
 }
