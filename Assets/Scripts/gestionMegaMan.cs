@@ -3,19 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class gestionMegaMan : MonoBehaviour
 {
     public float vitesseDeplacement;
     public float forceSaut;
     public float vitesseMaximale;
+    public static int pointage = 0;
     public bool finDePartie = false;
     private bool attaque = false;
 
     public AudioClip SonsMort;
+    public AudioClip SonItem;
 
     private Vector2 velocitePerso;
     
+    public TextMeshProUGUI points;
     
 
     // Update is called once per frame
@@ -129,6 +133,28 @@ public class gestionMegaMan : MonoBehaviour
         }     
     }
 
+    void OnTriggerEnter2D(Collider2D infosCollisions)
+    {
+        if(infosCollisions.gameObject.name == "trophee")
+        {
+            SceneManager.LoadScene("finaleGagne");
+        }
+        else if(infosCollisions.gameObject.name == "colliderChute")
+        {
+            finDePartie = true;
+            GetComponent<AudioSource>().PlayOneShot(SonsMort);
+            GetComponent<Animator>().SetTrigger("mort");
+            Invoke("recommencerJeu", 2f);
+        }
+        else if(infosCollisions.gameObject.name.StartsWith("ItemPoint"))
+        {
+            pointage++;
+            Destroy(infosCollisions.gameObject);
+            GetComponent<AudioSource>().PlayOneShot(SonItem);
+            points.text = pointage.ToString();
+        }
+    }
+
     void reinitialisationAttaque()
     {
         attaque = false;
@@ -137,7 +163,7 @@ public class gestionMegaMan : MonoBehaviour
 
     void recommencerJeu()
     {
-        SceneManager.LoadScene("Megaman");
+        SceneManager.LoadScene("finaleMort");
         finDePartie = false;
     }
 }

@@ -5,7 +5,20 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/introduction.unity
+    guid: b680c9bb287bb4643ae6134d5c82d6ca
+  - enabled: 1
+    path: Assets/Scenes/Megaman.unity
+    guid: f3ebf8b3a9fcc4a4b976ce87428dc66b
+  - enabled: 1
+    path: Assets/Scenes/finaleMort.unity
+    guid: 8da9135a2b9445e4495c39ebef8791c5
+  - enabled: 1
+    path: Assets/Scenes/finaleGagne.unity
+    guid: 259fc52d565fe9048a1d0186645a023b
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
