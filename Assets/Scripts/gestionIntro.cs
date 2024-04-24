@@ -23,7 +23,6 @@ public class gestionIntro : MonoBehaviour
         {
             SceneManager.LoadScene("Megaman");
         }
-      //  pointageABattre = gestionMegaMan.pointage;
     }
 
     IEnumerator clignoterTexte()

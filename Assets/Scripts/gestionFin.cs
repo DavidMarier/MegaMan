@@ -35,6 +35,8 @@ public class gestionFin : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
         SceneManager.LoadScene("Megaman");
-        gestionMegaMan.pointage = 0;
+        
+        // le compteur est à 0, puis retourne à sa valeur passé quand on gagne un point
     }
+    
 }

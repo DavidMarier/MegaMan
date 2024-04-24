@@ -10,7 +10,7 @@ public class gestionMegaMan : MonoBehaviour
     public float vitesseDeplacement;
     public float forceSaut;
     public float vitesseMaximale;
-    public static int pointage = 0;
+    public static int pointage;
     public bool finDePartie = false;
     private bool attaque = false;
     private bool tire = false;
@@ -24,8 +24,11 @@ public class gestionMegaMan : MonoBehaviour
     private Vector2 velocitePerso;
     
     public TextMeshProUGUI points;
-    
 
+    void Start()
+    {
+        pointage = 0;
+    }
     // Update is called once per frame
     void Update()
     {

@@ -8,16 +8,28 @@ using UnityEngine.UI;
 public class gestionVictoire : MonoBehaviour
 {
     public AudioClip musiqueGagne;
+    public GameObject trophe;
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(musiqueVictoire(musiqueGagne));
         GetComponent<TextMeshProUGUI>().text = "Points : " + gestionMegaMan.pointage;
-        if (gestionIntro.pointageABattre < 0)
+        if (gestionIntro.pointageABattre < gestionMegaMan.pointage)
         {
-
+            gestionIntro.pointageABattre = gestionMegaMan.pointage;
         }
+
+        if (gestionIntro.pointageABattre <= gestionMegaMan.pointage)
+        {
+            trophe.SetActive(true);
+        }
+        else if (gestionIntro.pointageABattre > gestionMegaMan.pointage)
+        {
+            trophe.SetActive(false);
+        }
+
+
     }
 
     // Update is called once per frame
@@ -25,7 +37,7 @@ public class gestionVictoire : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Space))
         {
-            SceneManager.LoadScene("Megaman");
+            SceneManager.LoadScene("introduction");
         }
     }
 
@@ -33,6 +45,6 @@ public class gestionVictoire : MonoBehaviour
     {
         GetComponent<AudioSource>().PlayOneShot(clip);
         yield return new WaitForSeconds(clip.length);
-        SceneManager.LoadScene("Megaman");
+        SceneManager.LoadScene("introduction");
     }
 }
