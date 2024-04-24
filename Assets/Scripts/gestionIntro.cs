@@ -8,10 +8,13 @@ public class gestionIntro : MonoBehaviour
 {
 
     public GameObject texteIntro;
+    public TextMeshProUGUI pointage;
+    public static int pointageABattre;
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(clignoterTexte());
+        pointage.text = "Pointage à battre : " + pointageABattre;
     }
 
     void Update()
@@ -20,6 +23,7 @@ public class gestionIntro : MonoBehaviour
         {
             SceneManager.LoadScene("Megaman");
         }
+      //  pointageABattre = gestionMegaMan.pointage;
     }
 
     IEnumerator clignoterTexte()

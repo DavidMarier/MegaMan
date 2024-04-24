@@ -12,4 +12,5 @@ public class gestionAbeille : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         Destroy(gameObject,0.3f);
     }
+  
 }

@@ -562,6 +562,7 @@ GameObject:
   - component: {fileID: 1454894423}
   - component: {fileID: 1454894425}
   - component: {fileID: 1454894424}
+  - component: {fileID: 1454894426}
   m_Layer: 5
   m_Name: Points
   m_TagString: Untagged
@@ -687,6 +688,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1454894422}
   m_CullTransparentMesh: 1
+--- !u!114 &1454894426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454894422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04a7585f68398b448e3f83451178670, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  compteur: 10
+  Recommencer: {fileID: 1370763716}
 --- !u!1 &1669472812
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,7 +903,6 @@ GameObject:
   - component: {fileID: 1859618735}
   - component: {fileID: 1859618734}
   - component: {fileID: 1859618736}
-  - component: {fileID: 1859618737}
   m_Layer: 0
   m_Name: ImageFin
   m_TagString: Untagged
@@ -1062,20 +1076,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1859618737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1859618733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c04a7585f68398b448e3f83451178670, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  compteur: 10
-  Recommencer: {fileID: 1370763716}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

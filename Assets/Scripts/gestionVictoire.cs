@@ -13,7 +13,11 @@ public class gestionVictoire : MonoBehaviour
     void Start()
     {
         StartCoroutine(musiqueVictoire(musiqueGagne));
-        GetComponent<Text>().text = gestionMegaMan.pointage + "points!";
+        GetComponent<TextMeshProUGUI>().text = "Points : " + gestionMegaMan.pointage;
+        if (gestionIntro.pointageABattre < 0)
+        {
+
+        }
     }
 
     // Update is called once per frame

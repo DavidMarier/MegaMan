@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 244456486}
   - component: {fileID: 244456485}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: pointage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,7 +154,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 13.367, y: -10}
-  m_SizeDelta: {x: 256.7563, y: 34.392}
+  m_SizeDelta: {x: 357.9827, y: 34.392}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &244456485
 MonoBehaviour:
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_text: "Pointage \xE0 battre : 0"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 04ca2c79a3f35bc41ae36802a7643b54, type: 2}
-  m_sharedMaterial: {fileID: -7772548150796109747, guid: 04ca2c79a3f35bc41ae36802a7643b54, type: 2}
+  m_sharedMaterial: {fileID: 2092480113955232415, guid: 04ca2c79a3f35bc41ae36802a7643b54, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 299952518}
   - component: {fileID: 299952517}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: barre espace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -289,8 +289,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -50, y: -208}
-  m_SizeDelta: {x: 673.2653, y: 50}
+  m_AnchoredPosition: {x: -13.673, y: -206}
+  m_SizeDelta: {x: 745.9197, y: 20.6117}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &299952517
 MonoBehaviour:
@@ -315,7 +315,7 @@ MonoBehaviour:
   m_text: Appuyez sur la barre d'espacement pour commencer!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ec0dc518eadef8c42802c20d1b314c3d, type: 2}
-  m_sharedMaterial: {fileID: 8518959831983137046, guid: ec0dc518eadef8c42802c20d1b314c3d, type: 2}
+  m_sharedMaterial: {fileID: -746624162897609055, guid: ec0dc518eadef8c42802c20d1b314c3d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -339,8 +339,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -852,6 +852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texteIntro: {fileID: 299952515}
+  pointage: {fileID: 244456485}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

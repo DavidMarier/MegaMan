@@ -14,6 +14,7 @@ public class gestionFin : MonoBehaviour
     void Start()
     {
         StartCoroutine(recommencerPartie());
+        GetComponent<TextMeshProUGUI>().text = "Points : " + gestionMegaMan.pointage;
     }
 
     // Update is called once per frame
