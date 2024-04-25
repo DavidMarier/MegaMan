@@ -5,21 +5,26 @@ using UnityEngine;
 
 public class gestionBalle : MonoBehaviour
 {
-    void Start()
-    {
-        Destroy(gameObject, 0.25f);
-    }
     void OnCollisionEnter2D(Collision2D infosCollisions)
     {
         if(infosCollisions.gameObject.tag == "ennemie")
         {
-            Destroy(gameObject, 0.15f);
+            
             infosCollisions.gameObject.GetComponent<gestionRoue>().DestructionRoue();
+            GetComponent<Animator>().SetBool("explose", true);
+            Destroy(gameObject, 0.15f);
         }
         else if(infosCollisions.gameObject.name == "Abeille")
         {
-            Destroy(gameObject, 0.15f);
+            
             infosCollisions.gameObject.GetComponent<gestionAbeille>().DestructionAbeille();
+            GetComponent<Animator>().SetBool("explose", true);
+            Destroy(gameObject, 0.15f);
+        }
+        else if (infosCollisions.gameObject)
+        {
+            GetComponent<Animator>().SetBool("explose", true);
+            Destroy(gameObject, 0.15f);
         }
     }
 
